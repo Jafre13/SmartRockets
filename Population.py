@@ -19,12 +19,10 @@ class Population:
 
         for i in range(self.popsize):
             self.rockets[i].fitness /= maxfit+1
-            #print(self.rockets[i].fitness)
 
         self.matingpool = []
         for i in range(self.popsize):
             n = self.rockets[i].fitness*100
-            #print(n)
             for j in range(int(n)):
                 self.matingpool.append(self.rockets[i])
 

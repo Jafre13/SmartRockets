@@ -14,7 +14,14 @@ class DNA:
 
     def fill(self):
         for i in range (0,len(self.a)):
-            self.a[i] = [np.random.uniform(-1,1),np.random.uniform(-1,1)]
+            unit = self.getUnitVector(np.asarray([np.random.uniform(-1, 1), np.random.uniform(-1, 1)]))
+            self.a[i] = unit
+
+    def getUnitVector(self,vector,scale=1):
+        mag = [np.sqrt(vector[0]**2+vector[1]**2)]
+        unit = vector/mag
+        return unit
+
 
     def crossover(self,partner):
         newGenes = []

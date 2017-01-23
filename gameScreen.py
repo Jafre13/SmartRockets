@@ -28,8 +28,12 @@ def draw():
     pygame.draw.circle(Constants.screen,Constants.White,Constants.target,15)
     label1 = myfont.render("MaxFitness "+str(Constants.MaxFit),1,Constants.White)
     label2 = myfont.render("Generation "+str(Constants.Generation),1,Constants.White)
+    label3 = myfont.render("Time "+str(Constants.count),1,Constants.White)
+
     Constants.screen.blit(label1,(100,100))
     Constants.screen.blit(label2,(100,150))
+    Constants.screen.blit(label3,(100,200))
+
     population.run()
 
     Constants.count += 1
@@ -47,7 +51,7 @@ def draw():
 while running:
     update()
     draw()
-    clock.tick(60)
+    #clock.tick(60)
 
 
 
